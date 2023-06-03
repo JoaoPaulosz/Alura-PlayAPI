@@ -1,4 +1,12 @@
+using Alura_Play.Data;
+using Microsoft.EntityFrameworkCore;
+using AutoMapper;
+
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("PlayConnection");
+builder.Services.AddDbContext<PlayContext>(opts => opts.UseMySql(connectionString, serverVersion: ServerVersion.AutoDetect(connectionString)));
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 
 // Add services to the container.
 
@@ -6,6 +14,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 
 var app = builder.Build();
 
