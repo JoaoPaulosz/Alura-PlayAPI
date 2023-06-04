@@ -2,6 +2,7 @@
 using Alura_Play.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -9,9 +10,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Alura_Play.Migrations
 {
     [DbContext(typeof(PlayContext))]
-    partial class PlayContextModelSnapshot : ModelSnapshot
+    [Migration("20230604191531_Alterando nome das tabelas")]
+    partial class Alterandonomedastabelas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

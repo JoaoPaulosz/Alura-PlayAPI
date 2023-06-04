@@ -6,8 +6,8 @@ namespace Alura_Play.Data.Dtos
     { 
 
         [Required(ErrorMessage = "O Campo Nome é obrigatório para upload")]
-        public string Name { get; set; }
-        public string Description { get; set; }
+        public string Titulo { get; set; }
+        public string Descricao { get; set; }
         [Required]
         public string Url { get; set; }
         public string Imagem { get; set; }
